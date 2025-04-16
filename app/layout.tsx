@@ -18,9 +18,9 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`antialiased min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 ${inter.className}`}
+        className={`antialiased min-h-screen bg-white dark:bg-zinc-900 text-slate-900 dark:text-slate-50 ${inter.className}`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="max-w-2xl mx-auto py-10 px-4">
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <ModeToggle />
                 <nav className="ml-auto text-sm font-medium space-x-6">
                   <Link href="/">Home</Link>
-                  <Link href="/about">About</Link>
+                  <Link href="/blogs">Blog</Link>
                 </nav>
               </div>
             </header>
