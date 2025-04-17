@@ -20,7 +20,7 @@ export default function BlogPosts() {
                      className='md:grid md:grid-cols-4 md:items-baseline'>
               <div className="md:col-span-3 group relative flex flex-col items-start">
                 <Title title={post.metadata.title} slug={post.slug}/>
-                <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                <p className="relative z-10 mt-2 text-sm dark:text-zinc-400">
                   {post.metadata.summary}
                 </p>
                 <Time date={post.metadata.publishedAt} isShowIcon={true}
@@ -38,7 +38,7 @@ export default function BlogPosts() {
 function Time({date, isShowIcon, className}: { date: string; isShowIcon?: boolean; className: string }) {
   return (
     <time
-      className={`relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 ${className}`}
+      className={`relative z-10 order-first mb-3 flex items-center text-sm text-zinc-700 dark:text-zinc-500 ${className}`}
       dateTime={date}
     >
       {isShowIcon && <IconTimeline/>}
@@ -57,7 +57,7 @@ function IconTimeline() {
 
 function Title({slug, title}: { slug: string; title: string; }) {
   return (
-    <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+    <h2 className="text-base font-semibold tracking-tight dark:text-zinc-100">
       <div
         className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"
       ></div>

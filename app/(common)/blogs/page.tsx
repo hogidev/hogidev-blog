@@ -10,12 +10,12 @@ export default function Page() {
     <>
       <header className="max-w-4xl">
         <h1
-          className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100"
+          className="text-4xl font-bold tracking-tight sm:text-5xl dark:text-zinc-100"
         >
           Writing on technologies, works, experiences, etc...
         </h1>
         <p
-          className="mt-6 text-base text-zinc-600 dark:text-zinc-400"
+          className="mt-6 text-base dark:text-zinc-400"
         >
           All of my long-form thoughts on programming, leadership, product design, and more.
         </p>

@@ -31,7 +31,7 @@ export default function Uses() {
   return (
     <>
       <header className="max-w-4xl">
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl dark:text-zinc-100">
           Software, gadgets I use and other things I recommend
         </h1>
       </header>
@@ -53,7 +53,7 @@ function UsesItem({ item }: { item: UseItem }) {
   return (
     <section className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
       <div className="grid max-w-3xl grid-cols-1 items-baseline gap-y-8 md:grid-cols-4">
-        <h2 className="text-sm font-semibold text-zinc-800 dark:text-zinc-100">{item.category}</h2>
+        <h2 className="text-sm font-semibold dark:text-zinc-100">{item.category}</h2>
         <div className="md:col-span-3">
           <ul className="space-y-2">
             {item.items.map((name, index) => (

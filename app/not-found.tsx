@@ -22,7 +22,7 @@ export default function NotFound() {
                         width="330"
                         height="300"
                       />
-                      <h1 className="text-2xl font-semibold mb-4">404 | Page not found</h1>
+                      <h1 className="text-3xl font-bold my-4">404 | Page not found</h1>
                       <a
                         href="/"
                         className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm bg-white/90 px-3 py-2 ring-1 shadow-lg shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
