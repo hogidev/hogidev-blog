@@ -10,7 +10,7 @@ export default function Header() {
           <div className="mx-auto w-full max-w-7xl lg:px-8">
             <div className="relative px-4 sm:px-8 lg:px-12">
               <div className="mx-auto max-w-2xl lg:max-w-5xl">
-                <div className="relative flex gap-4">
+                <div className="relative flex gap-4 items-center">
                   <div className="flex flex-1">
                     <div
                       className="h-10 w-10 rounded-full bg-white/90 p-0.5 ring-1 shadow-lg shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:ring-white/10">
