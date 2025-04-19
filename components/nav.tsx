@@ -67,20 +67,14 @@ export function Navbar({ isRoot }: { isRoot?: boolean }) {
 
 function TabGroupCustom() {
   const currentPath = usePathname();
-  const [hoverIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div>
       <div className="flex gap-4" role="tablist" aria-orientation="horizontal">
         {navItems.map(({ name, path }, index) => {
           let dataAttrs = {};
-          if (hoverIndex === index) {
-            dataAttrs = {
-              ...dataAttrs,
-              "data-hover": true
-            };
-          }
-          if (currentPath === path) {
+          const pathSplit = currentPath.split('/')[1];
+          if (`/${pathSplit}` === path) {
             dataAttrs = {
               ...dataAttrs,
               "data-selected": true

@@ -15,8 +15,10 @@ export default function BlogPosts() {
       {
         allBlogs
           .map((post, index) => (
-            <article key={index}
-                     className='md:grid md:grid-cols-4 md:items-baseline'>
+            <article
+              key={index}
+              className='md:grid md:grid-cols-4 md:items-baseline'
+            >
               <div className="md:col-span-3 group relative flex flex-col items-start">
                 <Title title={post.metadata.title} slug={post.slug}/>
                 <p className="relative z-10 mt-2 text-sm dark:text-zinc-400">

@@ -13,7 +13,7 @@ export default function Blog({ params }: {params: {slug: string}}) {
   return (
     <>
       <div className="xl:relative">
-        <div className="mx-auto max-w-2xl">
+        <div className="mx-auto max-w-4xl">
           <BackButton/>
           <article>
             <header className="flex flex-col">
