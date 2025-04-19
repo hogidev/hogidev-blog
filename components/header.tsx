@@ -13,7 +13,8 @@ export default function Header() {
                 <div className="relative flex gap-4 items-center">
                   <div className="flex flex-1">
                     <div
-                      className="h-10 w-10 rounded-full bg-white/90 p-0.5 ring-1 shadow-lg shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:ring-white/10">
+                      className="h-10 w-10 rounded-full bg-zinc-400/90 p-0.5 ring-1 shadow-lg shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:ring-white/10"
+                    >
                       <a aria-label="Home" className="pointer-events-auto" href="/">
                         <Image
                           className="rounded-full object-cover h-9 w-9"

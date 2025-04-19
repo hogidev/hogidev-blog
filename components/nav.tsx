@@ -20,9 +20,9 @@ export function Navbar({ isRoot }: { isRoot?: boolean }) {
         <div className="pointer-events-auto md:hidden">
           <Menu>
             <MenuButton
-              className="rounded-md py-1.5 px-3 shadow-inner focus:outline-none data-[open]:bg-zinc-800/90 data-[focus]:outline-1 data-[focus]:outline-white"
+              className="border rounded-md w-6 h-6 flex items-center justify-center data-[open]:bg-zinc-300 dark:data-[open]:bg-zinc-700"
             >
-              <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path
                   clipRule="evenodd"
                   fillRule="evenodd"
@@ -34,7 +34,7 @@ export function Navbar({ isRoot }: { isRoot?: boolean }) {
             <MenuItems
               transition
               anchor="bottom end"
-              className="flex flex-col w-52 origin-top-right rounded-xl border border-white/5 bg-zinc-800 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+              className="flex flex-col w-52 origin-top-right rounded-xl border border-gray-500/30 dark:border-white/5 bg-white dark:bg-zinc-800 p-1 text-sm/6 transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0 shadow-amber-600"
             >
               {navItems.map(({name, path}) => {
                 const isActive = currentPath === path;
@@ -45,7 +45,7 @@ export function Navbar({ isRoot }: { isRoot?: boolean }) {
                       href={path}
                       className={`w-full text-left rounded-lg py-1.5 px-3 ${
                         isActive
-                          ? 'text-teal-500 dark:text-teal-400'
+                          ? 'dark:bg-white/10 bg-zinc-300 dark:hover:bg-white/5 hover:bg-zinc-200'
                           : ''
                       }`}
                     >
@@ -88,10 +88,8 @@ function TabGroupCustom() {
           }
           return (
             <button
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
               key={path}
-              className="rounded-full py-1 px-3 text-sm/6 font-semibold focus:outline-none data-[selected]:bg-white/10 data-[hover]:bg-white/5 [data-selected='true']:data-[hover]:bg-white/10 data-[focus]:outline-1 data-[focus]:outline-white"
+              className="rounded-full py-1 px-3 text-sm/6 font-semibold dark:data-[selected]:bg-white/10 dark:hover:bg-white/5 hover:bg-zinc-200 data-[selected]:bg-zinc-300"
               role="tab"
               type="button"
               {...dataAttrs}
