@@ -34,7 +34,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={`antialiased h-screen bg-white dark:bg-zinc-900 text-slate-900 dark:text-slate-50 ${inter.className}`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
           <Analytics />
         </ThemeProvider>

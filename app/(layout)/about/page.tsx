@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {SOCIALS} from "@/app/(common)/about/socials.const";
+import {SOCIALS} from "@/app/(layout)/about/socials.const";
 
 export const metadata = {
   title: 'About',
