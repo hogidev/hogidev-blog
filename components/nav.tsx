@@ -81,15 +81,16 @@ function TabGroupCustom() {
             };
           }
           return (
-            <button
+            <a
               key={path}
               className="rounded-full py-1 px-3 text-sm/6 font-semibold dark:data-[selected]:bg-white/10 dark:hover:bg-white/5 hover:bg-zinc-200 data-[selected]:bg-zinc-300"
               role="tab"
               type="button"
+              href={path}
               {...dataAttrs}
             >
-              <a href={path}>{name}</a>
-            </button>
+              {name}
+            </a>
           )
         })}
       </div>
