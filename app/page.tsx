@@ -19,7 +19,7 @@ export default function Home() {
       <div
         className="animate-title duration-1000 flex flex-col items-center gap-8 text-center py-3.5 px-0.5 z-10 cursor-default"
       >
-        <div className="font-vinamilk font-bold">
+        <div className="font-vinamilk font-semibold">
           <h1
             className="text-8xl text-edge-outline font-display whitespace-nowrap bg-clip-text"
           >
@@ -30,7 +30,7 @@ export default function Home() {
             <span>1999</span>
           </div>
         </div>
-        <span className="whitespace-nowrap text-sm">Developer | Contributor | Life long learner | Cat lover</span>
+        <span className="whitespace-nowrap text-sm">Developer | Contributor | Lifelong learner | Cat lover</span>
       </div>
       <div
         className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0"

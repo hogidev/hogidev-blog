@@ -30,7 +30,7 @@ export default function About() {
         >
           Giang Tran
         </h1>
-        <span className="text-xs">Developer | Contributor | Life long learner | Cat lover</span>
+        <span className="text-xs">Developer | Contributor | Lifelong learner | Cat lover</span>
         <div className="mt-6 space-y-4 text-base text-zinc-800 dark:text-zinc-400">
           <p>My name is Giang Tran. I&#39;m currently working as a Sr. Front-end Engineer at Techcombank Vietnam.</p>
           <p>
