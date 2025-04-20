@@ -38,9 +38,9 @@ export default function Uses() {
       <div className="mt-16">
         <div className="space-y-10">
           {
-            uses.map(useItem => (
+            uses.map((useItem, index) => (
               // eslint-disable-next-line react/jsx-key
-              <UsesItem item={useItem} />
+              <UsesItem key={index} item={useItem} />
             ))
           }
         </div>
