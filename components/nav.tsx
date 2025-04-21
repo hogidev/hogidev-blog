@@ -2,7 +2,6 @@
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import {Menu, MenuButton, MenuItem, MenuItems} from "@headlessui/react";
-import {useState} from "react";
 
 const navItems = [
   {name: 'Blogs', path: '/blogs'},
@@ -71,7 +70,7 @@ function TabGroupCustom() {
   return (
     <div>
       <div className="flex gap-4" role="tablist" aria-orientation="horizontal">
-        {navItems.map(({ name, path }, index) => {
+        {navItems.map(({ name, path }) => {
           let dataAttrs = {};
           const pathSplit = currentPath.split('/')[1];
           if (`/${pathSplit}` === path) {

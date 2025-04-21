@@ -1,4 +1,8 @@
+'use client'
+
 export default function Footer() {
+  const currentDate = new Date();
+
   return (
     <footer className="mt-32 flex-none">
       <div className="sm:px-8">
@@ -8,7 +12,7 @@ export default function Footer() {
               <div className="mx-auto max-w-2xl lg:max-w-5xl">
                 <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
                   <p className="text-sm text-zinc-600 dark:text-zinc-500">
-                    © All rights reserved
+                    © {currentDate.getUTCFullYear()} Giang Tran. Some rights reserved
                   </p>
                 </div>
               </div>

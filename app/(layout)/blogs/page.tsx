@@ -21,7 +21,7 @@ export default function Page() {
         </p>
       </header>
       <div className="mt-16">
-        <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+        <div className="md:border-l md:border-zinc-300 md:pl-6 md:dark:border-zinc-600/40">
           <div className="flex max-w-3xl flex-col space-y-16">
             <BlogPosts />
           </div>
