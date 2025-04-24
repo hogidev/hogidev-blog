@@ -8,6 +8,14 @@ type Metadata = {
   image?: string
 }
 
+export interface MDXData {
+  metadata: Metadata;
+  slug: string;
+  content: string
+}
+
+const POSTS_DIR = path.join(process.cwd(), 'content', 'posts');
+
 function parseFrontMatter(fileContent: string) {
   let frontMatterRegex = /---\s*([\s\S]*?)\s*---/
   let match = frontMatterRegex.exec(fileContent)
@@ -35,7 +43,7 @@ function readMDXFile(filePath: string) {
   return parseFrontMatter(rawContent)
 }
 
-function getMDXData(dir: string) {
+function getMDXData(dir: string): Array<MDXData> {
   let mdxFiles = getMDXFiles(dir)
   return mdxFiles.map((file) => {
     let {metadata, content} = readMDXFile(path.join(dir, file))
@@ -50,7 +58,7 @@ function getMDXData(dir: string) {
 }
 
 export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), 'content', 'posts'))
+  return getMDXData(POSTS_DIR)
 }
 
 export function formatDate(date: string, includeRelative = false) {

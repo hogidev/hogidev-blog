@@ -1,13 +1,20 @@
 import {formatDate, getBlogPosts} from "@/utils/blog";
 import {notFound} from "next/navigation";
 import BackButton from "@/components/back-button";
-import {CustomMDX} from "@/components/mdx";
+import React from "react";
+import CustomMDX from "@/components/mdx";
 
-export default function Blog({ params }: {params: {slug: string}}) {
-  const post = getBlogPosts().find((post) => post.slug === params.slug)
+type Props = {
+  params: Promise<{ slug: string }>
+};
+
+export default async function Blog({ params }: Props) {
+  const { slug } = await params;
+  const posts = getBlogPosts();
+  const post = posts.find((item) => item.slug === slug);
 
   if (!post) {
-    notFound()
+    return notFound();
   }
 
   return (
@@ -31,7 +38,7 @@ export default function Blog({ params }: {params: {slug: string}}) {
               </time>
             </header>
             <div className="mt-8 prose dark:prose-invert">
-              <CustomMDX source={post.content}/>
+              <CustomMDX content={post.content}/>
             </div>
           </article>
         </div>
