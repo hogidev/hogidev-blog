@@ -8,7 +8,7 @@ export default function CustomMDX({ content }: { content: string }) {
   const [copiedCode, setCopiedCode] = useState(null);
 
   const handleCopy = (code: any) => {
-    navigator.clipboard.writeText(code);
+    void navigator.clipboard.writeText(code);
     setCopiedCode(code);
     setTimeout(() => setCopiedCode(null), 2000);
   };
@@ -19,29 +19,21 @@ export default function CustomMDX({ content }: { content: string }) {
         remarkPlugins={[remarkGfm]}
         components={{
           // Customize how code blocks are rendered
-          pre({ node, children, ...props }) {
+          "pre"({ node, children, ...props }) {
             return <div {...props}>{children}</div>; // Use a <div> for <pre> blocks to prevent <p> wrapping
           },
-          code({ inline, className, children, ...props }) {
+          "code"({ className, children }) {
             const language = className?.replace('language-', '') || '';
             const code = String(children).trim();
 
-            if (inline) {
-              return (
-                <code className="bg-gray-800 text-green-300 px-1 rounded">
-                  {code}
-                </code>
-              );
-            }
-
             return (
               <div className="relative border border-gray-200/50 rounded-md">
-                <div className={`flex items-center py-2 px-4 border-b border-gray-200/50 text-xs rounded-t-md ${language ? 'justify-between' : 'justify-end'}`} style={{ backgroundColor: '#2f2f2f' }}>
+                <div className={`text-gray-100 flex items-center py-2 px-4 border-b border-gray-200/50 text-xs rounded-t-md ${language ? 'justify-between' : 'justify-end'}`} style={{ backgroundColor: '#2f2f2f' }}>
                   {/* Language Label */}
                   {language && (
                     <span>
-                    {language}
-                  </span>
+                      {language}
+                    </span>
                   )}
 
                   {/* Copy Button */}
@@ -62,7 +54,7 @@ export default function CustomMDX({ content }: { content: string }) {
                 </div>
 
                 {/* Code Block */}
-                <pre className="text-gray-100 overflow-x-auto text-sm m-0 p-4 rounded-b-md rounded-t-none" style={{backgroundColor: '#171717'}}>
+                <pre className="text-gray-100 overflow-x-auto text-sm m-0 p-4 rounded-b-md rounded-t-none" style={{backgroundColor: '#24292e'}}>
                   <code className={className}>{code}</code>
                 </pre>
               </div>
