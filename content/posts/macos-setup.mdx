@@ -13,7 +13,7 @@ Xcode is a development tools developed by Apple to develop, test apps for all Ap
 You can download and install it from [**App  Store**](https://developer.apple.com/xcode/). However this way it will download the whole IDE (20GB+) and for a Web Developer it may not be necessary. You can just use its CLI (For use Git, Homebrew, or compiling code).
 
 To install the CLI, run it in Terminal:
-```bash
+```
 xcode-select --install
 ```
 Then click **Install** in the prompt that pops up.
@@ -24,51 +24,51 @@ Then click **Install** in the prompt that pops up.
 Homebrew is the package to manage for macOS and using to install a lot of tools like git, node, xcode,...
 
 Copy and paste this command into your terminal:
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+/bin/ -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 Following the guide to input your sudo password or press *RETURN/ENTER* to complete the installation. When the installation is complete, reopen your terminal to use Homebrew. You can check everything is working by running:
-```bash
+```
 brew-doctor
 ```
 If you see the warning instead *"ready to brew!"*, don't worry . You can run below promt to verify Homebrew working fine:
-```bash
+```
 brew-search-iterm2
 ```
 
 ## 3. iTerm2 / Wrap
 If your current terminal is really boring, you might consider using iTerm2 by running the following command:
-```bash
+```
 brew install --cask iterm2
 ```
 ### Customization
 This customize can improve your terminal experience. But this is optional, you can skip if you feel it not interested
 - Download theme from [iTerm2-Color-Schemes](https://iterm2colorschemes.com/) and import your favorite profile
 - Install Zsh + Oh My Zsh for better prompts and plugins (Since MacOS Catalina, zsh has been set as the default)
-```bash
+```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 Then pick a theme from .zshrc, e.g., ZSH_THEME="agnoster" or use Powerlevel10k:
-```bash
+```
 brew install romkatv/powerlevel10k/powerlevel10k
 ```
 Then in .zshrc:
-```bash
+```
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
 Besides iTerm2, recently I switched to another Rust-based terminal which is easier to use, install and more support with AI, is Warp.
 To install Warp, run the following command:
-```bash
+```
 brew install --cask warp
 ```
 
 ## 4. Git
 If you are a developer, you must use Git. To install, run:
-```bash
+```
 brew install git
 ```
 When done, verify that by using **git --version** and set git config
-```bash
+```
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 ```
@@ -78,29 +78,29 @@ I won't describe the steps in detail in this blog
 
 ## 5. NVM & Node
 NVM is a cross-platform Node.js version manager. To install, run:
-```bash
+```
 brew install nvm
 ```
 Create NVM directory
-```bash
+```
 mkdir ~./nvm
 ```
-Config shell. Add the following config to .zshrc or .bashrc. If these 2 files do not exist, create them by:
-```bash
+Config shell. Add the following config to .zshrc or .rc. If these 2 files do not exist, create them by:
+```
 touch ~/.zshrc
 ```
 Then, open this file to add config:
-```bash
+```
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+[ -s "/opt/homebrew/opt/nvm/etc/_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/_completion.d/nvm"
 ```
 Then, apply the changes:
-```bash
+```
 source ~/.zshrc
 ```
 Install Node with NVM
-```bash
+```
 nvm install node # or nvm install node --version
 nvm use node # or nvm use --version
 # Verify the Node.js version
@@ -114,7 +114,7 @@ You can switch between Node.js versions in specific projects or directories.
 Visual Studio Code is a lightweight code editor with support for many programming languages through extensions
 
 To install the latest version, use Homebrew:
-```bash
+```
 brew install --cask visual-studio-code
 ```
 
