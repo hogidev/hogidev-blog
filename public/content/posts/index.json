@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "slug": "modern-web-apps-react",
+    "title": "Building Modern Web Applications with React",
+    "excerpt": "Exploring the latest patterns and best practices for building scalable React applications.",
+    "date": "2026-03-20",
+    "author": "Alex Johnson",
+    "readTime": "5 min read",
+    "tags": ["React", "Web Development", "JavaScript"],
+    "file": "/content/posts/modern-web-apps-react.md"
+  },
+  {
+    "id": "2",
+    "slug": "typescript-large-codebases",
+    "title": "The Power of TypeScript in Large Codebases",
+    "excerpt": "How TypeScript helps teams maintain quality and productivity at scale.",
+    "date": "2026-03-18",
+    "author": "Sarah Chen",
+    "readTime": "7 min read",
+    "tags": ["TypeScript", "Programming", "Best Practices"],
+    "file": "/content/posts/typescript-large-codebases.md"
+  },
+  {
+    "id": "3",
+    "slug": "mastering-css-grid-flexbox",
+    "title": "Mastering CSS Grid and Flexbox",
+    "excerpt": "A practical guide to modern CSS layout techniques.",
+    "date": "2026-03-15",
+    "author": "David Martinez",
+    "readTime": "6 min read",
+    "tags": ["CSS", "Web Design", "Frontend"],
+    "file": "/content/posts/mastering-css-grid-flexbox.md"
+  }
+]
