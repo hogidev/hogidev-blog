@@ -18,7 +18,7 @@ import { SeoService } from '../core/services/seo.service';
         <article>
           <div class="mb-4 flex flex-wrap gap-2">
             @for (tag of currentPost.tags; track tag) {
-              <span class="rounded bg-gray-100 px-3 py-1 text-sm text-gray-700 dark:bg-gray-900 dark:text-gray-300">{{
+              <span class="rounded bg-gray-100 px-3 py-1 text-sm text-gray-700 dark:bg-[rgba(255,255,255,0.1)] dark:text-gray-300">{{
                 tag
               }}</span>
             }

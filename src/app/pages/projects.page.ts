@@ -5,7 +5,7 @@ import { SeoService } from '../core/services/seo.service';
   selector: 'app-projects-page',
   template: `
     <section class="mx-auto max-w-4xl px-4 py-12 sm:px-6">
-      <h1 class="mb-4 text-4xl md:text-5xl">Projects</h1>
+      <h1 class="mb-4 text-4xl md:text-5xl font-medium">Projects</h1>
       <p class="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
         A curated list of products, experiments, and open-source work from HogiDev.
       </p>
