@@ -25,8 +25,7 @@ import { SeoService } from '../core/services/seo.service';
           </div>
           <h1 class="mb-4 text-3xl md:text-4xl lg:text-5xl">{{ currentPost.title }}</h1>
           <div class="mb-8 border-b border-gray-200 pb-8 text-gray-600 dark:border-gray-800 dark:text-gray-300">
-            <span>{{ currentPost.author }}</span> • <time>{{ currentPost.date | date: 'longDate' }}</time> •
-            <span>{{ currentPost.readTime }}</span>
+            <time>{{ currentPost.date | date: 'longDate' }}</time>
           </div>
           <div class="prose-post" [innerHTML]="html()"></div>
         </article>

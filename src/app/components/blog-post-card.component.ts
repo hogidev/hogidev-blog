@@ -7,7 +7,7 @@ import { PostSummary } from '../core/models/post.model';
   selector: 'app-blog-post-card',
   imports: [RouterLink, DatePipe],
   template: `
-    <article class="rounded-lg border border-gray-200 p-5 dark:border-[#2e3744]">
+    <article class="rounded-xl border border-gray-200 p-5 dark:border-[#2e3744]">
       <div class="mb-3 flex flex-wrap gap-2">
         @for (tag of post.tags; track tag) {
           <span class="rounded bg-gray-100 px-2 py-1 text-xs text-gray-700 dark:bg-[rgba(255,255,255,0.1)] dark:text-gray-300">
