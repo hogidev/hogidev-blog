@@ -1,8 +1,0 @@
-<svg width="640" height="640" viewBox="0 0 640 640" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="640" height="640" rx="40" fill="#1F252E" />
-  <circle cx="320" cy="236" r="110" fill="#364252" />
-  <path d="M132 534C159 433 231 378 320 378C409 378 481 433 508 534" fill="#364252" />
-  <text x="320" y="600" text-anchor="middle" fill="#E5E7EB" font-size="30" font-family="Avenir Next, Arial, sans-serif">
-    HogiDev
-  </text>
-</svg>

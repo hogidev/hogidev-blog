@@ -1,11 +1,11 @@
 [
   {
-    "id": "3",
-    "slug": "spaces-vs-tabs-indentation-debate",
-    "title": "Spaces vs. Tabs: The Indentation Debate Continues",
-    "excerpt": "Explore the enduring debate between using spaces and tabs for code indentation, and why this choice matters more than you might think.",
-    "date": "2024-04-08",
-    "tags": ["Editor", "Teamwork", "Best Practices"],
-    "file": "/content/posts/spaces-vs-tabs-indentation-debate.md"
+    "id": "macos-setup",
+    "slug": "macos-web-dev-setup-2026",
+    "title": "My macOS Web Development Setup (2026)",
+    "excerpt": "A practical, step-by-step macOS setup: Xcode CLI tools, Homebrew, terminal, Git + SSH, Node via NVM, and editors.",
+    "date": "2026-03-25",
+    "tags": ["macOS", "Setup", "Tooling"],
+    "file": "/content/posts/macos-setup.md"
   }
 ]

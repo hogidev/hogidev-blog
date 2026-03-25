@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { SeoService } from '../core/services/seo.service';
 
 interface Project {
@@ -14,7 +13,6 @@ interface Project {
 
 @Component({
   selector: 'app-projects-page',
-  imports: [RouterLink],
   template: `
     <section class="mx-auto max-w-4xl px-4 py-12 sm:px-6">
       <h1 class="mb-4 text-4xl font-medium md:text-5xl">Projects</h1>
