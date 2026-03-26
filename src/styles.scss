@@ -5,10 +5,12 @@
 /* ~-2% tracking: CSS letter-spacing uses em; -0.02em ≈ -2% of font size */
 :root {
   --letter-spacing: -0.02em;
+  /* Fluid root: ~15px điện thoại → ~17px desktop (Tailwind rem scale theo giá trị này) */
+  --font-size-root: clamp(15px, 0.45vw + 13.5px, 17px);
 }
 
 html {
-  font-size: 16px;
+  font-size: var(--font-size-root);
   -webkit-text-size-adjust: 100%;
 }
 
@@ -28,6 +30,12 @@ body {
   line-height: 1.65;
   letter-spacing: var(--letter-spacing);
   text-rendering: optimizeLegibility;
+}
+
+@media (max-width: 639px) {
+  body {
+    line-height: 1.62;
+  }
 }
 
 .dark body {
@@ -202,5 +210,39 @@ h6 {
       }
     }
   }
+}
+
+/* Typewriter hero: avoid awkward wraps on narrow phones — one line + horizontal scroll if needed */
+.typewriter-hero__line {
+  @media (max-width: 639px) {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    padding-bottom: 2px;
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 9999px;
+      background-color: rgb(156 163 175 / 0.55);
+    }
+  }
+
+  @media (min-width: 640px) {
+    display: inline;
+    width: auto;
+    overflow-x: visible;
+    white-space: normal;
+  }
+}
+
+.dark .typewriter-hero__line::-webkit-scrollbar-thumb {
+  background-color: rgb(148 163 184 / 0.35);
 }
 

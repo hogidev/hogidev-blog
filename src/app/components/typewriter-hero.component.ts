@@ -5,8 +5,12 @@ import { Component, OnDestroy, OnInit, signal } from '@angular/core';
   template: `
     <section class="py-12 sm:py-16">
       <div class="mx-auto max-w-4xl px-4 sm:px-6">
-        <h1 class="mb-4 text-4xl font-medium md:text-5xl lg:text-6xl">
-          <span>{{ currentText() }}<span class="animate-pulse">_</span></span>
+        <h1
+          class="typewriter-heading mb-4 font-medium leading-tight tracking-tight text-[clamp(1.25rem,4.6vw+0.4rem,2.35rem)] sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight lg:text-6xl"
+        >
+          <span class="typewriter-hero__line">
+            {{ currentText() }}<span class="animate-pulse select-none" aria-hidden="true">_</span>
+          </span>
         </h1>
         <p class="max-w-2xl text-lg text-gray-600 dark:text-gray-300 md:text-xl">
           A collection of thoughts, tutorials, and insights on modern web development and software

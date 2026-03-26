@@ -5,7 +5,7 @@ import { SeoService } from '../core/services/seo.service';
   selector: 'app-about-page',
   template: `
     <section class="mx-auto max-w-4xl px-4 py-12 sm:px-6">
-      <h1 class="mb-8 text-4xl md:text-5xl font-medium">About me</h1>
+      <h1 class="mb-8 text-4xl md:text-5xl font-medium">Giang Tran</h1>
 
       <div class="mb-10 grid gap-8 md:grid-cols-[220px_1fr] md:items-start">
         <div class="flex flex-col items-start gap-4">
@@ -59,25 +59,18 @@ import { SeoService } from '../core/services/seo.service';
         </div>
         <div>
           <p class="mb-4 text-xl leading-relaxed text-gray-600 dark:text-gray-300">
-            I am HogiDev. I write about modern frontend engineering, architecture, and practical software craftsmanship.
+            I'm Giang Tran. I'm currently working as a Sr. Front-end Engineer at Techcombank Vietnam.
+          </p>
+          <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-2">
+            I write about modern frontend engineering, architecture, and practical software craftsmanship.
+            My focus is building maintainable Angular apps with strong performance, clear structure, and production-ready UX.
+            In addition, I also like to share it because writing it down will help me organized and remember it better.
           </p>
           <p class="leading-relaxed text-gray-700 dark:text-gray-300">
-            My focus is building maintainable Angular apps with strong performance, clear structure, and production-ready UX.
+            I hope you can find interesting things in my blog. If you have any questions, do not hesitate to contact me via email or social platform.
           </p>
         </div>
       </div>
-
-      <h2 class="mb-4 mt-8 text-2xl md:text-3xl">Our Mission</h2>
-      <p class="mb-6 leading-relaxed text-gray-700 dark:text-gray-300">
-        We share practical knowledge to help developers ship maintainable and high-performance software.
-      </p>
-
-      <h2 class="mb-4 mt-8 text-2xl md:text-3xl">What We Cover</h2>
-      <ul class="mb-8 space-y-3">
-        <li class="leading-relaxed text-gray-700 dark:text-gray-300"><strong>Frontend Engineering</strong> - Architecture and UI systems at scale.</li>
-        <li class="leading-relaxed text-gray-700 dark:text-gray-300"><strong>Performance</strong> - Techniques for fast and stable applications.</li>
-        <li class="leading-relaxed text-gray-700 dark:text-gray-300"><strong>Best Practices</strong> - Patterns that keep code clean and reliable.</li>
-      </ul>
     </section>
   `,
 })
