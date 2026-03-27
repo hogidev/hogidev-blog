@@ -209,9 +209,8 @@ export class BlogPostPage implements OnInit, OnDestroy {
   shareLinkedInUrl(): string {
     const meta = this.getShareMeta();
     if (!meta) return '#';
-    return this.buildShareUrl('https://www.linkedin.com/shareArticles', {
+    return this.buildShareUrl('https://www.linkedin.com/sharing/share-offsite/', {
       url: meta.url,
-      title: meta.title,
     });
   }
 
