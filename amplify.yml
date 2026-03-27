@@ -3,14 +3,19 @@ frontend:
   phases:
     preBuild:
       commands:
+        - nvm install 22
+        - nvm use 22
+        - node -v
         - npm ci --include=dev
     build:
       commands:
-        - npx ng build --configuration production
+        - npx ng build --configuration production --output-mode static
     postBuild:
       commands:
+        - cp dist/hogidev-blog/browser/index.csr.html dist/hogidev-blog/browser/index.html
         - test -f dist/hogidev-blog/browser/index.html
         - ls -la dist/hogidev-blog/browser
+        - ls -la dist/hogidev-blog/browser/*.html
   artifacts:
     baseDirectory: dist/hogidev-blog/browser
     files:
