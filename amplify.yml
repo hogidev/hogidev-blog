@@ -3,10 +3,14 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci
+        - npm ci --include=dev
     build:
       commands:
         - npx ng build --configuration production
+    postBuild:
+      commands:
+        - test -f dist/hogidev-blog/browser/index.html
+        - ls -la dist/hogidev-blog/browser
   artifacts:
     baseDirectory: dist/hogidev-blog/browser
     files:
