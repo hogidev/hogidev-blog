@@ -170,7 +170,7 @@ export class BlogPostPage implements OnInit, OnDestroy {
     const allPosts = await this.blogService.getPosts();
     this.relatedPosts.set(this.pickRelatedPosts(post, allPosts));
     this.shareUrl.set(
-      isPlatformBrowser(this.platformId) ? window.location.href : `https://hogidev.local/blog/${post.id}`,
+      isPlatformBrowser(this.platformId) ? window.location.href : `https://hogidev.com/blog/${post.id}`,
     );
     const rendered = await this.blogService.renderMarkdown(post.content);
     const safe = this.sanitizer.sanitize(SecurityContext.HTML, rendered) ?? '';
@@ -184,7 +184,7 @@ export class BlogPostPage implements OnInit, OnDestroy {
     this.seo.setPageMeta(
       `${post.title} | HogiDev`,
       post.excerpt,
-      `https://hogidev.local/blog/${post.id}`,
+      `https://hogidev.com/blog/${post.id}`,
     );
   }
 

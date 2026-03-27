@@ -106,7 +106,7 @@ export class HomePage implements OnInit {
     this.seo.setPageMeta(
       'HogiDev | Home',
       'Explore web development insights, tutorials, and engineering notes.',
-      'https://hogidev.local/',
+      'https://hogidev.com/',
     );
     this.posts.set(await this.blogService.getPosts());
   }

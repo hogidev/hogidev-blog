@@ -81,7 +81,7 @@ export class AboutPage implements OnInit {
     this.seo.setPageMeta(
       'About HogiDev',
       'Learn about HogiDev mission, topics, and community.',
-      'https://hogidev.local/about',
+      'https://hogidev.com/about',
     );
   }
 }

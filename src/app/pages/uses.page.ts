@@ -113,7 +113,7 @@ export class UsesPage implements OnInit {
     this.seo.setPageMeta(
       'Uses | HogiDev',
       'See the software, tools, and workflow used by HogiDev.',
-      'https://hogidev.local/uses',
+      'https://hogidev.com/uses',
     );
   }
 }

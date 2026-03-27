@@ -167,7 +167,7 @@ export class ProjectsPage implements OnInit {
     this.seo.setPageMeta(
       'Projects | HogiDev',
       'Explore products, experiments, and open-source projects by HogiDev.',
-      'https://hogidev.local/projects',
+      'https://hogidev.com/projects',
     );
   }
 }
