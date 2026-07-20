@@ -4,12 +4,15 @@
 /dist
 /tmp
 /out-tsc
-/bazel-out
 
 # Node
 /node_modules
-npm-debug.log
+npm-debug.log*
 yarn-error.log
+
+# Environment
+.env
+.env.*.local
 
 # IDEs and editors
 .idea/
@@ -30,14 +33,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
-__screenshots__/
+/.angular/
 
 # System files
 .DS_Store

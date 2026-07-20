@@ -1,59 +1,85 @@
-# HogidevBlog
+# Trần Hoàng Giang — Personal Website (Angular + Tailwind + Three.js)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+A personal portfolio with an interactive 3D two-story house rendered in real time.
+The house is a fixed full-viewport background: it reacts to the mouse (parallax),
+changes lighting with the theme (interior lamps at night / sun-shafts by day), plays
+a Doraemon cartoon on the living-room TV, and animates a character who walks upstairs
+to code, then comes down to watch TV — on a loop. Switching pages flies the camera
+to a different framing of the house.
 
-## Development server
+## Tech stack
 
-To start a local development server, run:
+- **Angular 21** (standalone components, signals, no NgModules)
+- **Tailwind CSS v4** (via `@tailwindcss/postcss`) — utilities available; the bespoke
+  3D-overlay layout lives in `src/styles.css`
+- **Three.js** (plain, no wrapper). The render loop runs inside
+  `NgZone.runOutsideAngular` so 60fps never triggers change detection
+- **Angular Router** with lazy-loaded page components and `:slug` blog routes
+- **marked** for rendering blog markdown
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Getting started
 
 ```bash
-ng generate --help
+npm install
+npm start          # ng serve → http://localhost:4200
+npm run build      # production build → dist/
 ```
 
-## Building
+> Requires Node 20+ and the Angular CLI (installed as a dev dependency; `npm start`
+> uses the local `ng`).
 
-To build the project run:
+## Project structure
 
-```bash
-ng build
+```
+src/
+  index.html                 # <html data-theme> + fonts; <body data-tab>
+  main.ts                    # bootstrapApplication(App, appConfig)
+  styles.css                 # Tailwind import + ported design system (CSS variables, layout)
+  app/
+    app.ts                   # root component → <app-shell>
+    app.config.ts            # router (component input binding + scrolling)
+    app.routes.ts            # /  /about  /blogs  /blogs/:slug  /projects
+    layout/
+      shell.component.ts      # nav + #celestial + #hero3d + <router-outlet> + footer;
+                              #   boots the scene after first render, sets body[data-tab]
+      nav.component.ts        # top nav, mobile hamburger, theme toggle (Tailwind-style icons)
+    core/
+      theme.service.ts        # signal<'dark'|'light'>, writes <html data-theme>, localStorage
+      blog.service.ts         # reads posts, renders markdown
+      three/
+        house-model.ts        # buildModel(): the whole house geometry + boy + routes
+        house-scene.service.ts# renderer, lights, textures, boy animation, per-tab camera
+    data/
+      posts.ts                # blog content (markdown) — EDIT ME
+      projects.ts             # project cards — EDIT ME
+    pages/
+      home.page.ts  about.page.ts  blogs.page.ts  blog-post.page.ts  projects.page.ts
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## How the 3D scene is wired
 
-## Running unit tests
+- `HouseSceneService` (root singleton) owns the **single WebGL context**. The canvas
+  lives once in the shell and persists across navigation — routes only change the
+  **camera view target** via `setView(tab)`.
+- `ShellComponent` calls `scene.init(host)` inside `afterNextRender` +
+  `runOutsideAngular`, keeps `body[data-tab]` in sync with the active route, and calls
+  `scene.dispose()` on destroy (removes listeners, stops the loop, disposes the renderer).
+- Themes: `ThemeService` sets `data-theme` on `<html>`; the render loop reads it each
+  frame and lerps light intensities. The sun/moon rise (`#celestial`) replays on toggle.
+- Responsive: `setView` pulls the camera back and shrinks/centers the house at
+  ≤1024px (tablet) and ≤560px (phone). The nav collapses to a hamburger at ≤1024px.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Editing content
 
-```bash
-ng test
-```
+- **Blog posts** → `src/app/data/posts.ts` (title, date, tags, markdown `content`).
+  Each post is available at `/blogs/<slug>`.
+- **Projects** → `src/app/data/projects.ts`.
+- **About / socials** → `src/app/pages/about.page.ts` (GitHub/LinkedIn/email links are
+  placeholders — replace them).
 
-## Running end-to-end tests
+## Notes
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- SSR is not configured (the request was browser-only). The scene is already guarded
+  with `isPlatformBrowser` / `afterNextRender`, so adding `@angular/ssr` later is safe.
+- All 3D textures (code, Doraemon, sky, sun-shafts) are generated at runtime on
+  `<canvas>` — there are no image assets to ship.
