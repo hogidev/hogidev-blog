@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     <section class="page" id="about">
       <div class="wrap">
         <h2>About</h2>
-        <p class="sub">A short introduction — edit this with your own story.</p>
+        <p class="sub">A bit more about who I am and how I work.</p>
         <div class="about-grid">
           <div>
             <p>I'm Giang, a fullstack developer based in Vietnam. I enjoy owning features from idea to production:
@@ -17,7 +17,7 @@ import { Component } from '@angular/core';
             <p>Outside of work I contribute to open source, and drink more coffee than the mug in that scene suggests.</p>
             <div class="timeline">
               <div class="t-item"><span class="t-year">2021 - now</span>
-                <div><b>Frontend Developer</b><span>Product team, web platform</span></div>
+                <div><b>Frontend Developer</b><span>Product team — built core features including an Entitlement Management System (EMS), Batch, Payroll, and Term Deposit modules. Led a 5-person frontend team on the project.</span></div>
               </div>
               <div class="t-item"><span class="t-year">2017 - 2021</span>
                 <div><b>B.Sc. Computer Science</b><span>University of Transport and Communications</span></div>
