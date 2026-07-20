@@ -11,7 +11,8 @@ import { BlogService } from '../core/blog.service';
         <div>
           <p class="kicker">// fullstack developer</p>
           <h1>Trần Hoàng Giang</h1>
-          <p class="lede">I build web products end to end — from database schemas and APIs to fast, responsive interfaces. Currently focused on TypeScript, Node.js and cloud-native systems.</p>
+          <p class="lede">I build web products end to end - from database schemas and APIs to fast, responsive
+            interfaces. Currently focused on TypeScript, Spring Boot and cloud-native systems.</p>
           <div class="latest">
             <div class="latest-head">
               <span class="mono">// latest writing</span>
@@ -27,7 +28,7 @@ import { BlogService } from '../core/blog.service';
         </div>
       </div>
     </section>
-  `,
+  `
 })
 export class HomePage {
   private readonly blog = inject(BlogService);

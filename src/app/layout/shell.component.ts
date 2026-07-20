@@ -2,17 +2,17 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
   Component,
+  effect,
   ElementRef,
   Inject,
+  inject,
+  NgZone,
   OnDestroy,
   PLATFORM_ID,
-  ViewChild,
-  effect,
-  inject,
+  ViewChild
 } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
-import { NgZone } from '@angular/core';
 import { HouseSceneService } from '../core/three/house-scene.service';
 import { ThemeService } from '../core/theme.service';
 import { NavComponent } from './nav.component';
@@ -27,7 +27,6 @@ type Tab = 'home' | 'about' | 'blogs' | 'projects';
     <div id="celestial" #celestial></div>
     <div id="hero3d" #hero3d></div>
     <div id="scrim"></div>
-    <p class="hero-hint">move your mouse — the house follows</p>
 
     <main>
       <router-outlet />
@@ -35,9 +34,8 @@ type Tab = 'home' | 'about' | 'blogs' | 'projects';
 
     <footer>
       <span>© 2026 Trần Hoàng Giang</span>
-      <span class="mono" style="font-size:13px;">Built with three.js</span>
     </footer>
-  `,
+  `
 })
 export class ShellComponent implements AfterViewInit, OnDestroy {
   @ViewChild('hero3d') hero3d!: ElementRef<HTMLElement>;
@@ -51,7 +49,7 @@ export class ShellComponent implements AfterViewInit, OnDestroy {
 
   constructor(
     @Inject(DOCUMENT) private readonly document: Document,
-    @Inject(PLATFORM_ID) platformId: object,
+    @Inject(PLATFORM_ID) platformId: object
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
     this.theme.init();

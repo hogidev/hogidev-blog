@@ -4,6 +4,7 @@ import { ShellComponent } from './layout/shell.component';
 @Component({
   selector: 'app-root',
   imports: [ShellComponent],
-  template: '<app-shell />',
+  template: '<app-shell />'
 })
-export class App {}
+export class App {
+}

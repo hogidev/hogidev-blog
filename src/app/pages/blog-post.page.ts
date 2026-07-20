@@ -25,7 +25,7 @@ import { BlogService } from '../core/blog.service';
         }
       </div>
     </section>
-  `,
+  `
 })
 export class BlogPostPage {
   // Bound from the route param via withComponentInputBinding-style :slug.

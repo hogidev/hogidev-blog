@@ -26,7 +26,7 @@ import { BlogService } from '../core/blog.service';
         </div>
       </div>
     </section>
-  `,
+  `
 })
 export class BlogsPage {
   private readonly blog = inject(BlogService);

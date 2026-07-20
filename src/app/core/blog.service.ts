@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { marked } from 'marked';
-import { POSTS, PostSummary, PostDetail } from '../data/posts';
+import { PostDetail, POSTS, PostSummary } from '../data/posts';
 
 /** Reads the static post list and renders markdown bodies to HTML. */
 @Injectable({ providedIn: 'root' })

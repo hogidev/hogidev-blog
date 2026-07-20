@@ -14,8 +14,9 @@ export class ThemeService {
 
   constructor(
     @Inject(DOCUMENT) private readonly document: Document,
-    @Inject(PLATFORM_ID) private readonly platformId: object,
-  ) {}
+    @Inject(PLATFORM_ID) private readonly platformId: object
+  ) {
+  }
 
   init(): void {
     this.set(this.stored() ?? 'dark');

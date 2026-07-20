@@ -18,7 +18,8 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [{ "glob": "**/*", "input": "public" }],
             "styles": ["src/styles.css"],
-            "polyfills": ["zone.js"]
+            "polyfills": ["zone.js"],
+            "loader": { ".md": "text" }
           },
           "configurations": {
             "production": {

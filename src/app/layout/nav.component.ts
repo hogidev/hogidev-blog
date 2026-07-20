@@ -1,4 +1,4 @@
-import { Component, HostListener, ElementRef, inject, signal } from '@angular/core';
+import { Component, ElementRef, HostListener, inject, signal } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from '../core/theme.service';
@@ -8,19 +8,25 @@ import { ThemeService } from '../core/theme.service';
   imports: [RouterLink, RouterLinkActive],
   template: `
     <nav>
-      <span class="brand"><b>~/</b>tran-hoang-giang</span>
+      <a class="brand" routerLink="/" aria-label="Go to home"><b>~/</b>tran-hoang-giang</a>
       <div class="nav-links" [class.open]="menuOpen()">
-        <a class="tab" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="close()">Home</a>
+        <a class="tab" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+           (click)="close()">Home</a>
         <a class="tab" routerLink="/about" routerLinkActive="active" (click)="close()">About</a>
         <a class="tab" routerLink="/blogs" routerLinkActive="active" (click)="close()">Blogs</a>
         <a class="tab" routerLink="/projects" routerLinkActive="active" (click)="close()">Projects</a>
       </div>
-      <button class="btn" id="theme-toggle" title="Toggle dark / light" aria-label="Toggle theme" (click)="theme.toggle()" [innerHTML]="icon()"></button>
-      <button class="btn" id="nav-toggle" aria-label="Menu" [attr.aria-expanded]="menuOpen()" (click)="toggleMenu($event)">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <button class="btn" id="theme-toggle" title="Toggle dark / light" aria-label="Toggle theme"
+              (click)="theme.toggle()" [innerHTML]="icon()"></button>
+      <button class="btn" id="nav-toggle" aria-label="Menu" [attr.aria-expanded]="menuOpen()"
+              (click)="toggleMenu($event)">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
       </button>
     </nav>
-  `,
+  `
 })
 export class NavComponent {
   readonly theme = inject(ThemeService);
